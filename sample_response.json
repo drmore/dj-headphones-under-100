@@ -1,0 +1,60 @@
+{
+  "SearchResult": {
+    "Items": [
+      {
+        "ASIN": "B000000001",
+        "DetailPageURL": "https://www.amazon.com/dp/B000000001?tag=example-20",
+        "ItemInfo": {
+          "Title": {
+            "DisplayValue": "Example DJ Headphones One"
+          }
+        },
+        "Offers": {
+          "Listings": [
+            {
+              "Price": {
+                "Amount": 39.99,
+                "Currency": "USD",
+                "DisplayAmount": "$39.99"
+              }
+            }
+          ]
+        },
+        "Images": {
+          "Primary": {
+            "Small": {
+              "URL": "https://example.com/img1.jpg"
+            }
+          }
+        }
+      },
+      {
+        "ASIN": "B000000002",
+        "DetailPageURL": "https://www.amazon.com/dp/B000000002?tag=example-20",
+        "ItemInfo": {
+          "Title": {
+            "DisplayValue": "Example DJ Headphones Two"
+          }
+        },
+        "Offers": {
+          "Listings": [
+            {
+              "Price": {
+                "Amount": 59.0,
+                "Currency": "USD",
+                "DisplayAmount": "$59.00"
+              }
+            }
+          ]
+        },
+        "Images": {
+          "Primary": {
+            "Small": {
+              "URL": "https://example.com/img2.jpg"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

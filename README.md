@@ -1,32 +1,19 @@
-# All DJ headphones under $100 — lowest price first
+# All DJ headphones under $100 — lowest price first (No-API mode)
 
-Static GitHub Pages site that **updates itself daily** using the **Amazon Product Advertising API (PA-API 5.0)**.
+This repo runs **without Amazon PA-API access**. It publishes a GitHub Pages site that:
+- links to a curated list of DJ headphone products (by ASIN)
+- includes an Amazon search link filtered to **under $100** and sorted **price low→high**
+- rebuilds once per day via GitHub Actions
+
+## Why no prices?
+Amazon requires Product Advertising API access to display live prices programmatically. Until PA-API is enabled on your Associates account, this site does not show prices on-page. Users click through to see the current price on Amazon.
 
 ## One-time setup
-1. Get your Amazon Associates US **Partner Tag** (tracking ID, usually ends in `-20`).
-2. Enable PA-API and obtain:
-   - Access key
-   - Secret key
-3. In your GitHub repo: Settings → Secrets and variables → Actions → add secrets:
-   - `PAAPI_ACCESS_KEY`
-   - `PAAPI_SECRET_KEY`
-   - `PAAPI_PARTNER_TAG`
-4. Enable GitHub Pages:
-   - Settings → Pages → Build and deployment → Deploy from a branch
-   - Branch: `main` / Folder: `/ (root)`
-5. Run the workflow once:
-   - Actions → Daily rebuild → Run workflow
+1. Put your ASINs in `asin_list.json` (already included).
+2. Add one GitHub Actions secret:
+   - `AMZ_PARTNER_TAG` (your tracking ID, e.g. `yourtag-20`)
+3. Enable GitHub Pages (Deploy from branch → main → /root).
+4. Run the workflow once.
 
-## Local run (optional)
-```bash
-pip install -r requirements.txt
-export PAAPI_ACCESS_KEY=...
-export PAAPI_SECRET_KEY=...
-export PAAPI_PARTNER_TAG=yourtag-20
-python build_page.py
-```
-
-## Locale defaults
-- Marketplace: `www.amazon.com`
-- Host: `webservices.amazon.com`
-- Region: `us-east-1`
+## Switching to PA-API later
+When you gain PA-API access, we can swap to the PA-API version to display live prices and truly sort cheapest-first on-page.
